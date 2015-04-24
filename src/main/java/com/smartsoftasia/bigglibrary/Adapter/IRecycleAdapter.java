@@ -7,12 +7,38 @@ import java.util.Collection;
  */
 public interface IRecycleAdapter<T> {
 
-        public Object getItem(int position);
+    /**
+     * Get item at position
+     *
+     * @param position position on the list
+     * @return items at the position
+     */
+    public Object getItem(int position);
 
-        public void appendItems(Collection<T> items);
+    /**
+     * Add new items to le current list
+     *
+     * @param items New items.
+     */
+    public void appendItems(Collection<T> items);
 
-        public void appendItem(T item);
+    /**
+     * Add mew item
+     *
+     * @param item mew item
+     */
+    public void appendItem(T item);
 
-        public void clear();
+    /**
+     * append items and clean old list
+     *
+     * @param items new items
+     */
+    public void appendNewsItems(Collection<T> items);
+
+    /**
+     * Clean the item list
+     */
+    public void clear();
 
 }
