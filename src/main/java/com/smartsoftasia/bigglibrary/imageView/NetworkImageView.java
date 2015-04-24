@@ -6,14 +6,14 @@ import android.util.AttributeSet;
 /**
  * Created by gui on 07/08/2014.
  */
-public class GBImageView extends AbstractImageView{
+public class NetworkImageView extends AbstractImageView{
     private static final String TAG = "GBImageView";
 
-    public GBImageView(Context context) {
+    public NetworkImageView(Context context) {
         super(context);
     }
 
-    public GBImageView(Context context, AttributeSet attrs) {
+    public NetworkImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

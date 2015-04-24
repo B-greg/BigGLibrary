@@ -7,13 +7,13 @@ import android.util.AttributeSet;
 /**
  * Created by gregoire on 9/4/14.
  */
-public class GbSquareImageView extends AbstractImageView {
+public class NetworkSquareImageView extends AbstractImageView {
 
-    public GbSquareImageView(Context context) {
+    public NetworkSquareImageView(Context context) {
         super(context);
     }
 
-    public GbSquareImageView(Context context, AttributeSet attrs) {
+    public NetworkSquareImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
