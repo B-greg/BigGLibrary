@@ -28,28 +28,6 @@ public abstract class AbstractImageView extends ImageView {
     public AbstractImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-/*        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.LayoutRatio);
-
-        final int N = a.getIndexCount();
-        for (int i = 0; i < N; ++i) {
-            int attr = a.getIndex(i);
-            switch (attr) {
-                case R.styleable.LayoutRatio_heightByWidth:
-                    heightByWidth = a.getFloat(attr, 0);
-                    break;
-                case R.styleable.LayoutRatio_widthByHeight:
-                    widthByHeight = a.getFloat(attr, 0);
-                    break;
-                case R.styleable.LayoutRatio_squareByWidth:
-                    heightByWidth = 1;
-                    break;
-                case R.styleable.LayoutRatio_squareByHeight:
-                    widthByHeight = 1;
-                    break;
-            }
-        }
-        a.recycle();*/
-
     }
 
     public AbstractImageView(Context context, AttributeSet attrs, int defStyle) {
@@ -69,40 +47,20 @@ public abstract class AbstractImageView extends ImageView {
         getLayoutParams().height = (int) h;
     }
 
-//    public void downloadImageFromURL(String url) {
-//        if (Validator.isValid(url)) {
-//            PicassoHandler.getInstance(getContext()).getPicasso().with(getContext())
-//                    .load(url)
-//                    .skipMemoryCache()
-//                    .into(this);
-//        }
-//    }
-//
-//    public void downloadImageFromFile(File file) {
-//        if(file == null)return;
-//        PicassoHandler.getInstance(getContext()).getPicasso().with(getContext())
-//                    .load(file)
-//                    .skipMemoryCache()
-//                    .into(this);
-//    }
 
     public void downloadImageFromURL(String url) {
         if (Validator.isValid(url)) {
-            ImageDownloader.loadImage(url, this);
+            ImageDownloader.loadImage(getContext(), url, this);
         }
     }
 
-    public void downloadImageFromURL(String url, ProgressBar downloadIndicator) {
-        if (Validator.isValid(url)) {
-            ImageDownloader.loadImage(url, this, downloadIndicator);
-        } else {
-            downloadIndicator.setVisibility(View.GONE);
-        }
+    public void downloadImageFromURL(String url, int downloadIndicator) {
+        ImageDownloader.loadImage(getContext(), url, this, downloadIndicator);
     }
 
     public void downloadImageFromUri(String uri) {
         if (Validator.isValid(uri)) {
-            ImageDownloader.loadImage("file:///" + uri, this);
+            ImageDownloader.loadImage(getContext(), "file:///" + uri, this);
         }
     }
 

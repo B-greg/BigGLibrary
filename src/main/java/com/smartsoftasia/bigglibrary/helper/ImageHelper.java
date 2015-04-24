@@ -8,12 +8,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
-import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,10 +28,10 @@ public class ImageHelper {
     public static final int IMAGE_DOWNLOAD_CANCEL = 3;
 
     public static void init(Context context) {
-        DisplayImageOptions options = new DisplayImageOptions.Builder().imageScaleType(ImageScaleType.IN_SAMPLE_INT).displayer(new FadeInBitmapDisplayer(250)).bitmapConfig(Config.RGB_565).cacheInMemory(true).cacheOnDisc(true).build();
+/*        DisplayImageOptions options = new DisplayImageOptions.Builder().imageScaleType(ImageScaleType.IN_SAMPLE_INT).displayer(new FadeInBitmapDisplayer(250)).bitmapConfig(Config.RGB_565).cacheInMemory(true).cacheOnDisc(true).build();
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context).defaultDisplayImageOptions(options).threadPriority(Thread.NORM_PRIORITY + 3).memoryCache(new WeakMemoryCache()).discCacheFileCount(1000).build();
 
-        ImageLoader.getInstance().init(config);
+        ImageLoader.getInstance().init(config);*/
     }
 
     public static Bitmap applyGaussianBlur(Drawable drawable, int radius) {
