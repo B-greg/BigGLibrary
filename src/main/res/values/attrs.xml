@@ -15,4 +15,12 @@
         <attr name="squareByWidth" format="boolean" />
         <attr name="squareByHeight" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="RangeSeekBar">
+        <attr name="absoluteMinValue" format="integer|float"/>
+        <attr name="absoluteMaxValue" format="integer|float"/>
+        <attr name="singleThumb" format="boolean"/>
+    </declare-styleable>
+
+
 </resources>
