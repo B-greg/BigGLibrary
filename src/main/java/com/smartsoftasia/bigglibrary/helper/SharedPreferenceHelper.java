@@ -43,4 +43,8 @@ public class SharedPreferenceHelper {
     }
 
 
+    public static void cleanString(Context context, String sharedPref, String key){
+        writeString(context,sharedPref,key,null);
+    }
+
 }
