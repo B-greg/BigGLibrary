@@ -33,6 +33,10 @@ public abstract class AbstractImageView extends ImageView {
     public AbstractImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);}
 
+    public void clear(){
+        this.setImageDrawable(null);
+    }
+
 
     public void setWidth(double w) {
         getLayoutParams().width = (int) w;
