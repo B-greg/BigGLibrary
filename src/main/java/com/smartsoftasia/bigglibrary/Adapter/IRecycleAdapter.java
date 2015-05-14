@@ -1,6 +1,7 @@
 package com.smartsoftasia.bigglibrary.Adapter;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by gregoire on 11/11/14.
@@ -14,6 +15,12 @@ public interface IRecycleAdapter<T> {
      * @return items at the position
      */
     public Object getItem(int position);
+    /**
+     * Get all items
+     *
+     * @return all items
+     */
+    public List<T> getItems();
 
     /**
      * Add new items to le current list
