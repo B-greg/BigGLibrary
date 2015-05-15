@@ -3,6 +3,11 @@ package com.smartsoftasia.bigglibrary.helper;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * Created by gregoire barret on 5/11/15.
  * For Perfumist project.
@@ -23,6 +28,14 @@ public class SharedPreferenceHelper {
     public static void writeString(Context context, String sharedPref, String key, String value){
         SharedPreferences.Editor editor = writeSharedPref(context, sharedPref);
         editor.putString(key, value);
+        editor.apply();
+    }
+
+    public static void writeStrings(Context context, String sharedPref, HashMap<String, String> keyValuePair){
+        SharedPreferences.Editor editor = writeSharedPref(context, sharedPref);
+        for (Map.Entry<String, String> o : keyValuePair.entrySet()) {
+            editor.putString( o.getKey(), o.getValue());
+        }
         editor.apply();
     }
 
