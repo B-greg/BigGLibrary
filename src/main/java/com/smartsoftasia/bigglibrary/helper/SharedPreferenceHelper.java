@@ -56,6 +56,18 @@ public class SharedPreferenceHelper {
     }
 
 
+    public static void writeBoolean(Context context, String sharedPref, String key, boolean value){
+        SharedPreferences.Editor editor = writeSharedPref(context, sharedPref);
+        editor.putBoolean(key, value);
+        editor.apply();
+    }
+
+    public static boolean readBoolean(Context context, String sharedPref, String key){
+        SharedPreferences sharedPreferences = readSharedPref(context, sharedPref);
+        return sharedPreferences.getBoolean(key, false);
+    }
+
+
     public static void cleanString(Context context, String sharedPref, String key){
         writeString(context,sharedPref,key,null);
     }
