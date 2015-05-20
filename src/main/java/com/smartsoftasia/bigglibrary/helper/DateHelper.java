@@ -11,6 +11,27 @@ import java.util.GregorianCalendar;
 public class DateHelper {
 
 
+    public static String dateTimeToString(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss");
+        if(date!= null){
+            return(format.format(date));
+        }
+        else
+            return "";
+    }
+
+    public static int dateTimeID(Date date) {
+        if(date!= null){
+            String intMonth = (String) android.text.format.DateFormat.format("MM", date); //06
+            String year = (String) android.text.format.DateFormat.format("yyyy", date); //2013
+            String day = (String) android.text.format.DateFormat.format("dd", date); //20
+            return Integer.valueOf(year+intMonth+day);
+        }
+        else
+            return 0;
+    }
+
+
     public static Date stringToDate(String strDate){
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss");
         Date date= null;
