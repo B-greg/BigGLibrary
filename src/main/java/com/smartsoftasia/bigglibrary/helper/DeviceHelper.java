@@ -13,6 +13,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.view.Display;
@@ -42,6 +43,10 @@ public final class DeviceHelper extends Application {
 
     public static boolean isTablet() {
         return !phone;
+    }
+
+    public static boolean isLolipop(){
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
 
     public static UUID getUniqueIdentifier() {
