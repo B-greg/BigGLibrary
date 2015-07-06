@@ -48,4 +48,7 @@ public interface IRecycleAdapter<T> {
      */
     public void clear();
 
+    void deleteItem(int position);
+    void addItem(int position, T item);
+
 }
