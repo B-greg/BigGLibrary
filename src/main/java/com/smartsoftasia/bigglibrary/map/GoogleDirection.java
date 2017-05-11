@@ -31,12 +31,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.http.HttpResponse;
+/*import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
+import org.apache.http.protocol.HttpContext;*/
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -125,7 +125,7 @@ public class GoogleDirection {
     
     private class RequestTask extends AsyncTask<String, Void, Document> {
 		protected Document doInBackground(String... url) {
-			try {
+/*			try {
 				HttpClient httpClient = new DefaultHttpClient();
 				HttpContext localContext = new BasicHttpContext();
 				HttpPost httpPost = new HttpPost(url[0]);
@@ -139,7 +139,7 @@ public class GoogleDirection {
 				e.printStackTrace();
 			} catch (SAXException e) {
 				e.printStackTrace();
-			} 
+			} */
 			return null;
 		}
 		

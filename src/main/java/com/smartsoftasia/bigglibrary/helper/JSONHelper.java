@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.util.Iterator;
 import java.util.List;
-
+/*
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -14,7 +14,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;*/
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,7 +33,7 @@ public class JSONHelper {
 
 	}
 
-	public JSONObject requestJSONObject(String url, String method, List<NameValuePair> params) {
+/*	public JSONObject requestJSONObject(String url, String method, List<NameValuePair> params) {
 		try {
 			HttpResponse response = requestJSONEntity(url, method, params);
 			int status = response.getStatusLine().getStatusCode();
@@ -53,8 +53,9 @@ public class JSONHelper {
 
 			return null;
 		}
-	}
+	}*/
 
+/*
 	public String requestJSONString(String url, String method, List<NameValuePair> params) {
 		try {
 			HttpResponse response = requestJSONEntity(url, method, params);
@@ -76,8 +77,9 @@ public class JSONHelper {
 			return null;
 		}
 	}
+*/
 
-	public HttpResponse requestJSONEntity(String url, String method, List<NameValuePair> params) {
+/*	public HttpResponse requestJSONEntity(String url, String method, List<NameValuePair> params) {
 		try {
 			DefaultHttpClient httpClient = new DefaultHttpClient();
 			HttpRequestBase httpMethod = null;
@@ -106,7 +108,7 @@ public class JSONHelper {
 			e.printStackTrace();
 			return null;
 		}
-	}
+	}*/
 
 	public static String jsonStringFromInputStream(InputStream is) {
 		try {

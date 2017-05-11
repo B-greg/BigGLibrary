@@ -30,7 +30,7 @@ import java.util.Locale;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
+/*
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -38,7 +38,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.BasicHttpContext;
-import org.apache.http.protocol.HttpContext;
+import org.apache.http.protocol.HttpContext;*/
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -216,7 +216,7 @@ public class GooglePlaceSearch {
 		Document doc = null;
 		
 		protected ArrayList<ContentValues> doInBackground(String... url) {
-			try {
+/*			try {
 				HttpClient httpClient = new DefaultHttpClient();
 				HttpContext localContext = new BasicHttpContext();
 				HttpPost httpPost = new HttpPost(url[0]);
@@ -283,7 +283,7 @@ public class GooglePlaceSearch {
 			        return arr_cv;
 				}
 				return null;
-			}
+			}*/
 			return null;
 		}	
 
@@ -367,7 +367,7 @@ public class GooglePlaceSearch {
 		BitmapRequest br = null;
 		
 		protected Bitmap doInBackground(BitmapRequest... arg0) {
-			br = arg0[0];
+			br = arg0[0];/*
 			
 			HttpClient httpclient = new DefaultHttpClient();   
 	        HttpGet request = new HttpGet(arg0[0].getURL()); 
@@ -384,7 +384,8 @@ public class GooglePlaceSearch {
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
-	        return bmp;
+	        return bmp;*/
+			return null;
 		}
 		
 		protected void onPostExecute(Bitmap bm) {
