@@ -1,21 +1,16 @@
 package com.smartsoftasia.bigglibrary.imageView;
 
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 
 import com.smartsoftasia.bigglibrary.helper.Validator;
-
-import java.io.File;
 
 
 /**
  * Created by gregoire on 9/4/14.
  */
-public abstract class AbstractImageView extends ImageView {
+public abstract class AbstractImageView extends AppCompatImageView {
     protected static final String TAG = "AbstractImageView";
 
     protected float heightByWidth = 0;
@@ -31,9 +26,10 @@ public abstract class AbstractImageView extends ImageView {
     }
 
     public AbstractImageView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);}
+        super(context, attrs, defStyle);
+    }
 
-    public void clear(){
+    public void clear() {
         this.setImageDrawable(null);
     }
 

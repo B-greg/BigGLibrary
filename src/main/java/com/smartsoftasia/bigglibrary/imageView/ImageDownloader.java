@@ -10,14 +10,17 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.GlideBuilder;
+import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.module.GlideModule;
 import com.smartsoftasia.bigglibrary.R;
 
 
 /**
  * Created by gui on 07/08/2014.
  */
-public class ImageDownloader {
+public class ImageDownloader implements GlideModule {
     private static final String TAG = "ImageDownloader";
 
     @Deprecated
@@ -56,7 +59,8 @@ public class ImageDownloader {
     public static void loadImage(final Context context, final String url, final ImageView imageView) {
         Glide.with(context)
                 .load(url)
-                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                .asBitmap()
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(imageView);
     }
 
@@ -64,12 +68,21 @@ public class ImageDownloader {
                                  final int downloadIndicator) {
         Glide.with(context)
                 .load(url)
+                .asBitmap()
                 .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .placeholder(downloadIndicator)
-                .crossFade()
                 .into(imageView);
     }
 
 
+    @Override
+    public void applyOptions(Context context, GlideBuilder builder) {
+        builder.setDecodeFormat(DecodeFormat.PREFER_ARGB_8888);
+    }
+
+    @Override
+    public void registerComponents(Context context, Glide glide) {
+        // nothing to do here
+    }
 }
